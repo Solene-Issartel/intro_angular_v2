@@ -1,0 +1,3 @@
+<app-festival-list [festivals]="festivals" (festivalSelected)="onSelected($event)"></app-festival-list>
+<app-festival-details *ngIf="selectedFestival" [festival]="selectedFestival"></app-festival-details>
+<app-message></app-message>

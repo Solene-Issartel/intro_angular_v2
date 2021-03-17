@@ -1,0 +1,23 @@
+<p>festivals-list works!</p>
+<table *ngIf="festivals">
+  <tr>
+    <th>Id</th><th>Nom</th><th>tables</th>
+    <th>Prix Espace entrée</th><th>Prix Espace salle</th><th>Prix Espace buvette</th>
+    <th>m<sup>2</sup> entrée</th><th>m<sup>2</sup> salle</th><th>m<sup>2</sup> buvette</th>
+    <th># tables entrée</th><th># tables salle</th><th># tables buvette</th>
+  </tr>
+  <tr *ngFor="let festival of festivals">
+    <td>{{festival.id}}</td><td>{{festival.name}}</td><td>{{festival.tableTotal}}</td>
+    <td>{{festival.tableprice_1 | currency}}</td>
+    <td>{{festival.tableprice_2 | currency}}</td>
+    <td>{{festival.tableprice_3 | currency}}</td>
+    <td>{{festival.sqmprice_1 | currency}}</td>
+    <td>{{festival.sqmprice_2 | currency}}</td>
+    <td>{{festival.sqmprice_3 | currency}}</td>
+    <td>{{festival.tablemax_1 | number:'3.0' }}</td>
+    <td>{{festival.tablemax_2 | number:'3.0'}}</td>
+    <td>{{festival.tablemax_3 | number:'3.0'}}</td>
+    <td><button (click)="onSelect(festival)">Select</button></td>
+  </tr>
+</table>
+<p>end of table</p>

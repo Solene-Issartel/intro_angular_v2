@@ -1,0 +1,14 @@
+<p>festival-details works!</p>
+<!-- <input [formControl]="nameControl" type="text"><button (click)="onValidate()">Validate</button> -->
+<form [formGroup]="festivalGroup" (ngSubmit)="onValidate()">
+  <table>
+    <tr>
+      <td colspan="2"><label>Name: <input style="width: 87%;" type="text" formControlName="name"></label></td>
+    </tr>
+    <tr>
+      <td><label>Entrance: <input type="number" formControlName="entrancePrice"></label></td>
+      <td><label>Room: <input type="number" formControlName="mainRoomPrice"></label></td>
+    </tr>
+  </table>
+  <button type="submit" [disabled]="!festivalGroup.valid">Validate change</button>
+</form>
